@@ -45,7 +45,7 @@ def get_conversational_chain():
 
     
     Do not reference the PDF, try to be as helpful as possible and break everything down into small simple steps for beginners.
-
+    Provide the response in a format that can be directly used in a React application. Use valid HTML tags like <p> for paragraphs, <a> for links, <h1>/<h2> for headings, and <ul>/<li> for lists. Avoid markdown or other non-HTML formatting.
     Respond in {language}.
 
     Context: {context}

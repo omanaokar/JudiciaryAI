@@ -74,6 +74,7 @@ if (inputGrp) {
         language: "English" // Use the appropriate language
       });
       setresponseQuery(responseQuery.concat({id: uuidv4(), query: text, response: response.data.answer }));
+      inputElement.value=""
       setShowResponse(true);
     } catch (error) {
       console.error("There was an error making the request:", error);
