@@ -143,7 +143,6 @@ Once the backend and frontend are set up and running, follow these steps:
 
 ---
 
-## Conclusion
 
 After following these steps, both the backend and frontend of the JudiciaryAI system will be running. You can now interact with the chatbot, which uses AI to understand and answer queries about the judicial system of India based on the legal documents you provide. This project offers a powerful tool for legal professionals and the general public to quickly access important legal information.
 
