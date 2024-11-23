@@ -1,5 +1,3 @@
-Here is a detailed README for your **JudiciaryAI** project that leverages React, Flask, and Gemini to create a chatbot for the judicial system of India:
-
 ---
 
 # JudiciaryAI
