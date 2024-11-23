@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+Here is a detailed README for your **JudiciaryAI** project that leverages React, Flask, and Gemini to create a chatbot for the judicial system of India:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# JudiciaryAI
 
-In the project directory, you can run:
+**JudiciaryAI** is a chatbot built to assist in the judicial system of India by providing quick and relevant answers from legal documents such as judgments, orders, and other important legal content. The system is powered by **React** for the frontend, **Flask** for the backend, and **Google Gemini** for AI-based NLP processing. It utilizes PDF vectorization to train the model on legal documents, enabling it to understand and respond intelligently to queries.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. [Project Overview](#project-overview)
+2. [Technologies Used](#technologies-used)
+3. [Setup Instructions](#setup-instructions)
+    1. [Backend Setup](#backend-setup)
+    2. [Frontend Setup](#frontend-setup)
+4. [Environment Variables](#environment-variables)
+5. [Running the Project](#running-the-project)
+6. [Conclusion](#conclusion)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Overview
 
-### `npm run build`
+JudiciaryAI is designed to simplify the legal research process by providing an AI-powered assistant that can read, understand, and retrieve information from legal documents. The system involves:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Backend**: Flask-based server that handles PDF vectorization and communicates with the Gemini AI API to process legal data.
+- **Frontend**: React application that allows users to interact with the chatbot.
+- **Gemini AI**: A powerful AI model that provides the NLP capabilities needed for understanding complex legal documents.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+- **Frontend**: React.js
+- **Backend**: Flask (Python)
+- **AI Model**: Google Gemini API (for NLP and machine learning)
+- **PDF Processing**: Vectorization of legal PDFs to train the model
+- **Database**: (Optional) You can use a database to store processed data if required.
+- **Version Control**: Git/GitHub
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup Instructions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Follow these steps to set up the project locally.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Backend Setup
 
-## Learn More
+#### Step 1: Create Virtual Environment
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Open VS Code and press `Ctrl + Shift + P` to open the command palette.
+2. Select **"Select Python Interpreter"** and choose **"Create Virtual Environment"**.
+3. Choose the required Python version.
+4. Select the **bot/requirements** to install all necessary dependencies for the backend.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Step 2: Install Dependencies
 
-### Code Splitting
+Navigate to the **bot** directory and install the required Python dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+cd bot
+pip install -r requirements.txt
+```
 
-### Analyzing the Bundle Size
+#### Step 3: Set API Key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Create a `.env` file in the **bot** directory and add your Google Gemini API key:
 
-### Making a Progressive Web App
+```bash
+GOOGLE_API_KEY=<your-gemini-api-key>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> Replace `<your-gemini-api-key>` with your actual API key for the Google Gemini API.
 
-### Advanced Configuration
+#### Step 4: Load PDFs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. In the **bot** directory, open a terminal and run:
 
-### Deployment
+   ```bash
+   python add_pdfs.py
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. Follow the instructions in the terminal to load and vectorize the PDFs that will be used to train the model.
 
-### `npm run build` fails to minify
+#### Step 5: Start Flask Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In the same terminal, run the following command to start the Flask backend server:
+
+```bash
+python app.py
+```
+
+**Important:** Do **NOT** close this terminal. The Flask server must remain running for the chatbot to function.
+
+---
+
+### 2. Frontend Setup
+
+#### Step 1: Install Dependencies
+
+Open a new terminal window and navigate to the **front** directory:
+
+```bash
+cd front
+```
+
+Install all the necessary dependencies for the React frontend:
+
+```bash
+npm install
+```
+
+#### Step 2: Start React Development Server
+
+Start the React development server by running:
+
+```bash
+npm start
+```
+
+This will start the frontend at [http://localhost:3001](http://localhost:3001).
+
+---
+
+## Environment Variables
+
+Ensure that the following environment variables are set:
+
+1. **GOOGLE_API_KEY**: The API key for Google Gemini, set in the `.env` file located in the **bot** directory.
+
+---
+
+## Running the Project
+
+Once the backend and frontend are set up and running, follow these steps:
+
+1. **Backend**:
+   - In the **bot** directory, run `python app.py` to start the Flask server.
+   - Ensure that your environment variables are correctly configured (especially the `GOOGLE_API_KEY`).
+
+2. **Frontend**:
+   - In the **front** directory, run `npm start` to launch the React app.
+
+3. Navigate to [http://localhost:3001](http://localhost:3001) in your browser to interact with the JudiciaryAI chatbot.
+
+---
+
+## Conclusion
+
+After following these steps, both the backend and frontend of the JudiciaryAI system will be running. You can now interact with the chatbot, which uses AI to understand and answer queries about the judicial system of India based on the legal documents you provide. This project offers a powerful tool for legal professionals and the general public to quickly access important legal information.
+
+---
+
+Feel free to contribute, raise issues, or request new features. Enjoy using JudiciaryAI!
+
