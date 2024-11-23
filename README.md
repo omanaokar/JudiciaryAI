@@ -1,10 +1,8 @@
----
 
 # JudiciaryAI
 
 **JudiciaryAI** is a chatbot built to assist in the judicial system of India by providing quick and relevant answers from legal documents such as judgments, orders, and other important legal content. The system is powered by **React** for the frontend, **Flask** for the backend, and **Google Gemini** for AI-based NLP processing. It utilizes PDF vectorization to train the model on legal documents, enabling it to understand and respond intelligently to queries.
 
----
 
 ## Table of Contents
 
@@ -153,3 +151,4 @@ After following these steps, both the backend and frontend of the JudiciaryAI sy
 
 Feel free to contribute, raise issues, or request new features. Enjoy using JudiciaryAI!
 
+---
